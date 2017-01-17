@@ -25,7 +25,7 @@ a[y][x]=n;
 		if(ny0)
 			ny=i-1;
 		if(nx0)
-			nx=i-1;when it goes out of square's boundary
+			nx=i-1;//when it goes out of square's boundary
 				if (a[ny][nx]!=0)
 					x++;if there already exist number
 				else{
