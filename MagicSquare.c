@@ -1,46 +1,46 @@
-#include stdio.h
-int main (void)
-{
-int i,x,y,n=1,p;
-int nx,ny;next x,y
-int a[100][100];
-printf (making magic square, input odd numbern);
-scanf (%d,&i);
-for(y=0;yi;y++)
-{
-for(x=0;xi;x++)
-{
-a[y][x]=0;initiallize (put 0)
-}
-}
+#pragma warning(disable: 4996 )
 
-x=0,y=i2;set starting point
-a[y][x]=n;
-
-	while (n=ii)
+#include <stdio.h>
+int main(void)
+{
+	int input, x, y, num = 1;
+	int nx, ny;//next x and y place
+	int a[100][100];
+	printf("input odd number to make magic square:\n");	scanf("%d", &input);
+	for (y = 0; y<input; y++)
 	{
-	a[y][x]=n;input number at the coordinate
-	nx=x-1;
-	ny=y-1;moving left upper
-		if(ny0)
-			ny=i-1;
-		if(nx0)
-			nx=i-1;//when it goes out of square's boundary
-				if (a[ny][nx]!=0)
-					x++;if there already exist number
-				else{
-					x=nx,y=ny;}
-	n++;
+		for (x = 0; x<input; x++)
+		{
+			a[y][x] = 0;//initiallize (input 0)
+		}
 	}
 
-	for (y=0;yi;y++)print
+	x = 0, y = input / 2;//set first coordinate
+	a[y][x] = num;
+
+	while (num <= input*input)
 	{
-	for (x=0;xi;x++)
-	{
-	printf (%4d,a[x][y]);
-	}
-	printf(nn);margin
+		a[y][x] = num;//input number at coordinate
+		nx = x - 1;
+		ny = y - 1;//moving left upper
+		if (ny<0)
+			ny = input - 1;
+		if (nx<0)
+			nx = input - 1;//when it goes out of boundary
+		if (a[ny][nx] != 0)
+			x++;//already has number
+		else{
+			x = nx, y = ny;//set next coordinate
+		}
+		num++;//increasing by 1
 	}
 
-scanf (%d,&p);
+	for (y = 0; y<input; y++)//print out
+	{
+		for (x = 0; x<input; x++)
+		{
+			printf("%4d", a[x][y]);
+		}
+		printf("\n\n");//margin
+	}
 }
