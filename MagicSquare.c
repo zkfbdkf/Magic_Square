@@ -6,7 +6,9 @@ int main(void)
 	int input, x, y, num = 1;
 	int nx, ny;//next x and y place
 	int a[100][100];
-	printf("input odd number to make magic square:\n");	scanf("%d", &input);
+	printf("input odd number to make magic square:\n");
+
+	scanf("%d", &input);
 	for (y = 0; y<input; y++)
 	{
 		for (x = 0; x<input; x++)
